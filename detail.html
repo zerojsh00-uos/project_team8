@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content -%}
+  <div class="section-wrapper">
+    <div class="move-wrapper">
+{#    {% block nav_detail %}active{% endblock nav_detail%}#}
+      <!-- start single blog page -->
+      <section class="inner-banner" id="top">
+        <div class="w-container fixed-container">
+          <div class="algin-center">
+            <h1 class="inner-sub" data-ix="move-3"><span class="domote">Flying.</span>&nbsp;Image Post</h1>
+            <div class="tst-txt tst-ban" data-ix="move-3">Here you can put some description about you project.</div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="w-container">
+          <div class="div-spc spc">
+            <div class="post">
+              <a class="w-inline-block" href="#">
+                  <img src="{{ url_for('static', filename = 'images/blog1_1.jpg') }}" alt="blog1_1.jpg">
+              </a>
+            </div>
+          </div>
+          <div class="div-spc spc">
+            <h3>Image Post</h3>
+            <div class="meta-tag">By&nbsp;<a href="#" class="post-link">admin</a> | November 3rd, 2014</div>
+          </div>
+          <div class="div-spc spc">
+            <p>Pellentesque commodo eros a enim. Fusce vel dui. Duis vel nibh at velit scelerisque suscipit. Duis leo. Aenean imperdiet. Curabitur suscipit suscipit tellus. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent metus tellus, elementum eu, semper a, adipiscing nec, purus. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Nullam vel sem. Aenean massa. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Sed aliquam ultrices mauris. Curabitur at lacus ac velit ornare lobortis. Donec mollis hendrerit risus. Maecenas malesuada. Fusce a quam. Fusce convallis metus id felis luctus adipiscing. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Phasellus a est.</p>
+          </div>
+          <div class="div-spc spc">
+            <div class="w-row">
+              <div class="w-col w-col-7">
+                <blockquote class="qoute q-white">
+                  <div class="q-txt">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. In ac dui quis mi consectetuer lacinia. Nulla sit amet est.</div>
+                </blockquote>
+              </div>
+              <div class="w-col w-col-5 w-hidden-medium w-hidden-small w-hidden-tiny"></div>
+            </div>
+          </div>
+          <div class="div-spc spc">
+            <p>Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Ut non enim eleifend felis pretium feugiat. In turpis.. Suspendisse feugiat.
+              <br>
+              <br>Cras ultricies mi eu turpis hendrerit fringilla. Nam eget dui. Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+              <br>
+              <br>Curabitur a felis in nunc fringilla tristique. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Praesent ac massa at ligula laoreet iaculis. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Vivamus consectetuer hendrerit lacus.</p>
+          </div>
+          <div class="div-spc spc">
+            <div class="btn-spc btn-mrg"><a class="button btn-small btn-tag" href="#">Design</a>
+            </div>
+            <div class="btn-spc btn-mrg"><a class="button btn-small btn-tag" href="#">Slider</a>
+            </div>
+            <div class="btn-spc btn-mrg"><a class="button btn-small btn-tag" href="#">Image Post</a>
+            </div>
+            <div class="btn-spc btn-mrg"></div>
+          </div>
+          <div>
+            <div>
+              <h4>2 Comments</h4>
+              <div class="line-con"></div>
+            </div>
+          </div>
+          <div class="blog-comment">
+            <div class="w-clearfix sp">
+              <div class="photo-comment"></div>
+              <div class="comment-wrapper">
+                <h4 class="com-name">John Doe</h4>
+                <div class="meta-tag"><a href="#" class="post-link">Reply</a> | November 3rd, 2014</div>
+              </div>
+            </div>
+            <div class="sp">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+            </div>
+            <div class="line-con"></div>
+          </div>
+          <div class="blog-comment b-reply">
+            <div class="w-clearfix sp">
+              <div class="photo-comment"></div>
+              <div class="comment-wrapper">
+                <h4 class="com-name">John Doe</h4>
+                <div class="meta-tag"><a href="#" class="post-link">Reply</a> | November 3rd, 2014</div>
+              </div>
+            </div>
+            <div class="sp">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+            </div>
+            <div class="line-con"></div>
+          </div>
+          <div>
+            <h4>Leave A Comment</h4>
+            <div class="line-con"></div>
+          </div>
+          <div>
+            <div class="">
+              <form class="w-clearfix" id="email-form" name="email-form" data-name="Email Form">
+                <input class="w-input blog-field" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name" required>
+                <input class="w-input blog-field" id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required>
+                <input class="w-input blog-field" id="Website" type="text" placeholder="Enter your website" name="Website" data-name="Website">
+                <textarea class="w-input blog-area" id="Message" placeholder="Write Message" name="Message" required data-name="Message"></textarea>
+                <input class="w-button button btn-small" type="submit" value="Send Message" data-wait="Please wait...">
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div><!-- end single blog page -->
+{%- endblock content %}

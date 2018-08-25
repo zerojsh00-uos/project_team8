@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block scripts %}
+
+    <script>
+	$(document).ready(function(){
+
+		/***************************************/
+		/* single Data list */
+		/***************************************/
+		$('#list-autocomplete').autocomplete({
+			source: {{ book_name_list|tojson }},
+			messages: {
+				noResults:''
+			}
+		});
+		/***************************************/
+		/* end single Data list */
+		/***************************************/
+
+
+	});
+	</script>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="/static/css/demo.css">
+	<link rel="stylesheet" href="/static/css/j-forms.css">
+
+	<!-- Scripts -->
+	<script src="/static/js/jquery.ui.min.js"></script>
+{% endblock scripts %}
+{% block content -%}
+        {% include 'filter.html' %}
+
+
+
+
+      <div class="section-wrapper">
+    <div class="move-wrapper">
+
+
+
+
+      <section class="section">
+        <div class="w-container">
+          <div>
+
+              <div class="w-slider-mask"><div class="w-slide" style="transform: translateX(0px); opacity: 1;">
+                <div class="test-wrapper">
+                    <a href="/index_book"><img src="/static/images/gogole.png"height="200px"></a>
+                </div>
+              </div></div>
+
+          <form action="" method=""  id="j-forms" novalidate>
+
+          <div style="padding-top: 20px;">
+            <div class="w-container">
+{#              <div class="w-row">#}
+                <div class="w-col w-col-10">
+{#                    <div class="unit">#}
+                        <input class="w-input blog-field" id="list-autocomplete" type="text" placeholder="{{ book_name }}" name="book_name" >
+{#                    </div>#}
+                </div>
+                <div class="w-col w-col-2 cnt-col" style = "text-align: center;">
+                    <button type="submit" class="button btn-line btn-small">검색</button>
+                </div>
+{#              </div>#}
+            </div>
+          </div>
+          </form>
+
+
+          </div>
+        </div>
+      </section>
+
+        <section class="section">
+        <div class="w-container"><div>
+            <div class="w-row">
+              <div class="w-col w-col-5 w-clearfix">
+                <div class="mix mix-3 remove-mx">
+                  <div class="img-wrapper"><img src="{{ book_image }}" alt="{{ book_name }}">
+                  </div>
+                </div>
+              </div>
+              <div class="w-col w-col-7">
+                <h2 class="tab-h">{{ book_name }}</h2>
+                <p>{{ book_content }}</p>
+                <div class="btn-spc"><a class="button btn-color-dark btn-small" href="#">유사 전시 검색</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section">
+        <div class="w-container"><div>
+
+
+
+            <div class="w-slider carousel-ibox c-clients" data-animation="slide" data-duration="800" data-infinite="1" data-ix="show-arrow" data-delay="6000" data-autoplay="1">
+            <div class="w-slider-mask">
+              <div class="w-slide w-clearfix">
+                {% for each in best_seller.index[:5] %}
+                <form method="get" class="j-forms" id="j-forms" novalidate>
+                <a class="w-inline-block client-wraper">
+                    <button type="submit" name="book_name" value="{{ best_seller.loc[each]['name'] }}"><img src="{{ best_seller.loc[each].image }}" alt="{{ best_seller.loc[each]['name'] }}"></button>
+                </a>
+                </form>
+                {% endfor %}
+              </div>
+              <div class="w-slide w-clearfix">
+                {% for each in best_seller.index[5:10] %}
+                <form method="get" class="j-forms" id="j-forms" novalidate>
+                <a class="w-inline-block client-wraper">
+                    <button type="submit" name="book_name" value="{{ best_seller.loc[each]['name'] }}"><img src="{{ best_seller.loc[each].image }}" alt="{{ best_seller.loc[each]['name'] }}"></button>
+                </a>
+                </form>
+                {% endfor %}
+              </div>
+              <div class="w-slide w-clearfix">
+                {% for each in best_seller.index[10:15] %}
+                <form method="get" class="j-forms" id="j-forms" novalidate>
+                <a class="w-inline-block client-wraper">
+                    <button type="submit" name="book_name" value="{{ best_seller.loc[each]['name'] }}"><img src="{{ best_seller.loc[each].image }}" alt="{{ best_seller.loc[each]['name'] }}"></button>
+                </a>
+                </form>
+                {% endfor %}
+              </div>
+              <div class="w-slide w-clearfix">
+                {% for each in best_seller.index[15:20] %}
+                <form method="get" class="j-forms" id="j-forms" novalidate>
+                <a class="w-inline-block client-wraper">
+                    <button type="submit" name="book_name" value="{{ best_seller.loc[each]['name'] }}"><img src="{{ best_seller.loc[each].image }}" alt="{{ best_seller.loc[each]['name'] }}"></button>
+                </a>
+                </form>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+{%- endblock content %}
