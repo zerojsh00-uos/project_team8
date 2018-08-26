@@ -77,60 +77,32 @@ def exhbnRec():
 
 
 
-@app.route('/index_book', methods=['GET'])
+@app.route('/index_book', methods=['GET', 'POST'])
 def index_book():
-
+    book_name = request.args.get('book_name')  # 책 제목을 받음
     try:
-        if request.args.get('book_name') :
-            book_name = request.args.get('book_name')  # 책 제목을 받음
+        if book_name :
             # search 기능
             print(book_name)
-
-            # plot_url = word_cloud(book_name)
 
             book_author = all_book[all_book['name'] == book_name].author.values[0]
             book_content = all_book[all_book['name'] == book_name].text.values[0]
             book_image = all_book[all_book['name'] == book_name].image.values[0]
 
             print('입력 처리 성공 !!')
+            plot_url=word_cloud(book_name)
 
             return render_template('index_book.html', best_seller=best_seller, book_name_list=book_name_list,
                                    book_name=book_name, book_author=book_author, book_content=book_content,
-                                   book_image=book_image)#, plot_url=plot_url)
+                                   book_image=book_image, plot_url=plot_url)
 
-        else :
+        else:
             print('미입력 상태 처리 성공 !!')
             return render_template('index_book.html', best_seller=best_seller, book_name_list=book_name_list)
 
-
-    except Exception as e :
+    except Exception as e:
         print(e)
         print('실패 ㅠㅠ')
-
-
-
-
-
-
-# @app.route('/index_book', methods=['GET'])
-# def index_book():
-#     try:
-#         # search 기능
-#         book_name = request.args.get('book_name')  # 책 제목을 받음
-#         print(book_name)
-#
-#         plot_url = word_cloud(book_name)
-#
-#         book_author = all_book[all_book['name'] == book_name].author.values[0]
-#         book_content = all_book[all_book['name'] == book_name].text.values[0]
-#         book_image = all_book[all_book['name'] == book_name].image.values[0]
-#
-#         return render_template('index_book.html', best_seller=best_seller, book_name_list=book_name_list,
-#                                book_name=book_name, book_author=book_author, book_content=book_content,
-#                                book_image=book_image, plot_url=plot_url)
-#     except Exception as e:
-#         print(e)
-#         return render_template('index_book.html', best_seller=best_seller, book_name_list=book_name_list)
 
 
 
@@ -149,6 +121,11 @@ def aboutUs():
         print(row)
 
     return render_template('aboutUs.html', active='aboutUs', model=model)
+
+
+@app.route('/intro')  # about Us
+def intro():
+    return render_template('intro.html', active='intro')
 
 
 @app.route('/elements')  # Common Elements

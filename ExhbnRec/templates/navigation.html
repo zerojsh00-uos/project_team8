@@ -19,23 +19,18 @@
       </a>
       <div class="navigation" data-ix="move-2">
         <ul class="w-list-unstyled">
+
             <div class="line"></div>
-          <li class="li-nav"><a class="nav-link {% if active=='index' %}active{% endif %}" href="{{ url_for('index') }}">명화</a>
-                <div class="sub-nav">Famous Painting</div>
+         <li class="li-nav">
+              <a class="nav-link {% if active=='intro' %}active{% endif %}" href="{{ url_for('intro') }}">서비스 소개</a>
+                <div class="sub-nav">Intro</div>
+          </li>
+          <li class="li-nav"><a class="nav-link {% if active=='index' %}active{% endif %}" href="{{ url_for('index') }}">시작하기</a>
+                <div class="sub-nav">Let's get started !</div>
           </li>
             <div class="line"></div>
           <li class="li-nav">
-              <a class="nav-link {% if active=='exhbnRec' %}active{% endif %}" href="{{ url_for('exhbnRec')}}">전시추천</a>
-                <div class="sub-nav">Exhibition Recommendation</div>
-          </li>
-            <div class="line"></div>
-          <li class="li-nav">
-              <a class="nav-link {% if active=='detail' %}active{% endif %}" href="{{ url_for('detail') }}">전시상세</a>
-                <div class="sub-nav">Exhibition Detail</div>
-          </li>
-            <div class="line"></div>
-          <li class="li-nav">
-              <a class="nav-link {% if active=='aboutUs' %}active{% endif %}" href="{{ url_for('aboutUs') }}">소개</a>
+              <a class="nav-link {% if active=='aboutUs' %}active{% endif %}" href="{{ url_for('aboutUs') }}">만든이</a>
                 <div class="sub-nav">About Us</div>
           </li>
             <div class="line"></div>

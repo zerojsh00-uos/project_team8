@@ -49,9 +49,8 @@ $(document).ready(function(){
     <div class="move-wrapper">
 
 
-      <section class="section_book">
+      <section class="w3-container w3-content w3-center w3-padding-64">
         <div class="w-container">
-          <div>
               <div class="w-slider-mask"><div class="w-slide" style="transform: translateX(0px); opacity: 1;">
                 <div class="test-wrapper">
                     <a href="/index_book"><img src="/static/images/gogole.png"height="200px"></a>
@@ -79,14 +78,14 @@ $(document).ready(function(){
           </div>
           </form>
           </div>
-        </div>
       </section>
 
       {% if book_name is string %}
 
-      <section class="section_book">
+      <section class="w3-container w3-content w3-center w3-padding-64">
         <div class="w-container"><div>
             <div class="w-row">
+
               <div class="w-col w-col-5 w-clearfix">
                 <div class="mix mix-3 remove-mx">
                   <div class="img-wrapper"><img src="{{ book_image }}" alt="{{ book_name }}" width = "266px" height = "400px">
@@ -103,7 +102,9 @@ $(document).ready(function(){
                         <div class="w-col w-col-9">
                           <div class="cta-txt">텍스트의 빈출 단어로 워드 클라우드 생성하기</div>
                         </div>
-                        <div class="w-col w-col-3 cnt-col"><a class="button btn-small btn-gray-txt" id = 'word_cloud' href="#">생성</a>
+                                                    <div class="w-col w-col-3 cnt-col"><button type="submit" name="book_name"  class="button btn-small btn-gray-txt" id = 'word_cloud'>생성</button>
+
+{#                          <div class="w-col w-col-3 cnt-col"><form action="/index_book" method="POST"><button type="submit" name="book_name"  class="button btn-small btn-gray-txt" id = 'word_cloud'>생성</button></form>#}
                         </div>
                       </div>
                     </div>
