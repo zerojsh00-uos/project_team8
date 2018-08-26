@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block scripts %}
+  <script>
+
+    $(".art").click(function() {
+        var selectId = $(this).attr("id");
+
+        state=$("#"+selectId).hasClass("Yellow")
+
+        if(state==false){
+            $("#" + selectId).addClass("Yellow");
+            $("input[name=" + selectId + "]").val(1);
+            $("#" + selectId + " .left-star").css("color", "#ffe400")
+        }
+        if(state==true){
+            $("#"+selectId).removeClass("Yellow")
+            $("input[name="+selectId+"]").val(0);
+            $("#"+selectId+" .left-star").css("color","white")
+        }
+    });
+
+  </script>
+{% endblock scripts %}
+{% block content -%}
+  <div class="section-wrapper">
+    <div class="move-wrapper">
+        {% include 'filter.html' %}
+      <!-- start portfolio -->
+        <form action="{{ url_for('exhbnRec') }}" method="POST">
+            <div class="w-clearfix grid" id="Grid">
+              {% for num in sample_data.index %}
+                  <input type="hidden" name="{{ num }}" value="0"></input>
+                  <div class="mix mix-5" data-ix="hover-port">
+                      <a class="w-inline-block tittle-wrapper" >
+                          <h4 class="text-port" data-ix="move-up">{{ sample_data['title'][num] }}</h4>
+                          <div class="sub-text" data-ix="move-up-2">{{ sample_data['artist'][num] }}</div>
+                      </a>
+                  <div class="img-wrapper art" id="{{ num }}">
+                      <img src="{{ sample_data['image'][num] }}" alt="img_{{ num }}" class="artImg">
+                    <div class="triangle">
+                      <div class="left-star">
+                        <i class="fa fa-star fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="call-to-action cta-gray">
+                <div class="w-container">
+                  <div class="w-row">
+                    <div class="w-col w-col-9">
+                      <div class="cta-txt">명화를 한개이상 선택하고 '전시추천'을 눌러주세요</div>
+                    </div>
+                    <div class="w-col w-col-3 cnt-col">
+                        <input type="submit" class="button btn-small btn-gray-txt" value="전시추천"></input>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </form>
+  </div><!-- end portfolio -->
+</div>
+
+{%- endblock content %}

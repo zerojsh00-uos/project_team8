@@ -1,0 +1,53 @@
+<!-- preloader -->
+  <div class="loading">
+    <div class="loader">
+        <img src="{{ url_for('static', filename = 'images/puff.svg') }}" alt="puff.svg">
+    </div>
+  </div>
+
+    <!-- start navigation -->
+  <div class="w-hidden-medium w-hidden-small w-hidden-tiny left-navigation" data-ix="hover-out">
+    <div class="hamburger" data-ix="hover">
+      <div class="ham2">
+        <div class="line-1"></div>
+        <div class="line-3" data-ix="90-grade"></div><!-- plus to x interaction -->
+      </div>
+    </div>
+    <nav class="menu-wrapper">
+      <a class="w-inline-block brand" href="{{ url_for('index') }}" data-ix="move">
+          <img src="{{ url_for('static', filename = 'images/logo4-1.png') }}" width="120" height="120" alt="logo4-1.png"><!-- logo goes here -->
+      </a>
+      <div class="navigation" data-ix="move-2">
+        <ul class="w-list-unstyled">
+            <div class="line"></div>
+          <li class="li-nav"><a class="nav-link {% if active=='index' %}active{% endif %}" href="{{ url_for('index') }}">명화</a>
+                <div class="sub-nav">Famous Painting</div>
+          </li>
+            <div class="line"></div>
+          <li class="li-nav">
+              <a class="nav-link {% if active=='exhbnRec' %}active{% endif %}" href="{{ url_for('exhbnRec')}}">전시추천</a>
+                <div class="sub-nav">Exhibition Recommendation</div>
+          </li>
+            <div class="line"></div>
+          <li class="li-nav">
+              <a class="nav-link {% if active=='detail' %}active{% endif %}" href="{{ url_for('detail') }}">전시상세</a>
+                <div class="sub-nav">Exhibition Detail</div>
+          </li>
+            <div class="line"></div>
+          <li class="li-nav">
+              <a class="nav-link {% if active=='aboutUs' %}active{% endif %}" href="{{ url_for('aboutUs') }}">소개</a>
+                <div class="sub-nav">About Us</div>
+          </li>
+            <div class="line"></div>
+          <li class="li-nav">
+              <a class="nav-link {% if active=='elements' %}active{% endif %}" href="{{ url_for('elements') }}">가져다 쓸 요소</a>
+          </li>
+        </ul>
+      </div>
+      <div class="social-ico" data-ix="move">
+        <div class="copyright">
+          <div class="copyright-text">ⓒ 2018 Flying by All Rights Reserved.</div>
+        </div>
+      </div>
+    </nav><!-- end navigation -->
+  </div>

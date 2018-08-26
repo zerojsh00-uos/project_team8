@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content -%}
+  <div class="section-wrapper">
+    <div class="move-wrapper">
+
+      <!-- start blog page -->
+      <section class="section s-b">
+        <div class="w-row">
+          <div class="w-col w-col-3 w-col-stack col-m2">
+            {% for num in range(0,3,1) %}
+            <div class="blog-p">
+              <div class="post">
+                <a class="w-inline-block" href={{test2['링크'][sims[num][0]]}}><img src={{test2['이미지'][sims[num][0]]}} alt="blog1.jpg">
+                </a>
+              </div>
+              <div class="bcon-wrapper">
+                <h3><a href="single-blog.html" class="h-link">{{test2['전시제목'][sims[num][0]], sims[num][1]}}</a></h3>
+                <div>
+                  <div class="meta-tag">By&nbsp;<a href="#" class="post-link">{{test2['전시작가'][sims[num][0]]}}</a>{{test2['전시일정'][sims[num][0]]}}</div>
+                  <div class="blog-l"></div>
+                </div>
+                <p class="ellipsis_multi">{{test2['텍스트'][sims[num][0]]}}</p>
+                <div class="post-more"><a class="post-link" href="{{test2['링크'][sims[num][0]]}}">Read More? {{test2['링크'][sims[num][0]]}}</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="w-col w-col-3 w-col-stack col-m2">
+            {% for num in range(3,6,1) %}
+            <div class="blog-p">
+              <div class="post">
+                <a class="w-inline-block" href={{test2['링크'][sims[num][0]]}}><img src={{test2['이미지'][sims[num][0]]}} alt="blog1.jpg">
+                </a>
+              </div>
+              <div class="bcon-wrapper">
+                <h3><a href="single-blog.html" class="h-link">{{test2['전시제목'][sims[num][0]], sims[num][1]}}</a></h3>
+                <div>
+                  <div class="meta-tag">By&nbsp;<a href="#" class="post-link">{{test2['전시작가'][sims[num][0]]}}</a>{{test2['전시일정'][sims[num][0]]}}</div>
+                  <div class="blog-l"></div>
+                </div>
+                <p class="ellipsis_multi">{{test2['텍스트'][sims[num][0]]}}</p>
+                <div class="post-more"><a class="post-link" href={{test2['링크'][sims[num][0]]}}>Read More? {{test2['링크'][sims[num][0]]}}</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="w-col w-col-3 w-col-stack col-m2">
+            {% for num in range(6,9,1) %}
+            <div class="blog-p">
+              <div class="post">
+                <a class="w-inline-block" href={{test2['링크'][sims[num][0]]}}><img src={{test2['이미지'][sims[num][0]]}} alt="blog1.jpg">
+                </a>
+              </div>
+              <div class="bcon-wrapper">
+                <h3><a href="single-blog.html" class="h-link">{{test2['전시제목'][sims[num][0]], sims[num][1]}}</a></h3>
+                <div>
+                  <div class="meta-tag">By&nbsp;<a href="#" class="post-link">{{test2['전시작가'][sims[num][0]]}}</a>{{test2['전시일정'][sims[num][0]]}}</div>
+                  <div class="blog-l"></div>
+                </div>
+                <p class="ellipsis_multi">{{test2['텍스트'][sims[num][0]]}}</p>
+                <div class="post-more"><a class="post-link" href={{test2['링크'][sims[num][0]]}}>Read More? {{test2['링크'][sims[num][0]]}}</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="w-col w-col-3 w-col-stack col-m2">
+            {% for num in range(9,12,1) %}
+            <div class="blog-p">
+              <div class="post">
+                <a class="w-inline-block" href={{test2['링크'][sims[num][0]]}}><img src={{test2['이미지'][sims[num][0]]}} alt="blog1.jpg">
+                </a>
+              </div>
+              <div class="bcon-wrapper">
+                <h3><a href="single-blog.html" class="h-link">{{test2['전시제목'][sims[num][0]], sims[num][1]}}</a></h3>
+                <div>
+                  <div class="meta-tag">By&nbsp;<a href="#" class="post-link">{{test2['전시작가'][sims[num][0]]}}</a>{{test2['전시일정'][sims[num][0]]}}</div>
+                  <div class="blog-l"></div>
+                </div>
+                <p class="ellipsis_multi">{{test2['텍스트'][sims[num][0]]}}</p>
+                <div class="post-more"><a class="post-link" href={{test2['링크'][sims[num][0]]}}>Read More? {{test2['링크'][sims[num][0]]}}</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </div>
+  </div><!-- end blog page -->
+{%- endblock content %}
