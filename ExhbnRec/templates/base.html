@@ -11,7 +11,9 @@
     <meta name="keywords" content="responsive, portfolio, professional, artist, fullscreen, photo, photographers, agencies, agencies, php, interaction">
 
     <!-- mobile meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="HTML5 Template">
     <meta name="referrer" content="no-referrer"/>
 
@@ -51,7 +53,9 @@
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/form.js') }}"></script>
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/default.js') }}"></script>
       <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.mixitup.min.js') }}"></script>
-{#      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>#}
+      <script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery.oLoader.js') }}"></script>
+
+    {#      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>#}
 {#      <script src="http://code.jquery.com/ui/1.7.3/jquery-ui.js"></script>#}
 
     {%- block scripts %}

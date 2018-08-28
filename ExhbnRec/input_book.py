@@ -1,15 +1,16 @@
-def input_book():
-    import pandas as pd
-    all_book = pd.read_csv('static/books_all.csv')
+import pandas as pd
 
-    del all_book['Unnamed: 0']
-    all_book.reset_index(drop=True, inplace=True)
+def input_book():
+    # all_book = pd.read_csv('static/books_all.csv')
+    all_book = pd.read_excel('static/books_all.xlsx')
+
+    # del all_book['Unnamed: 0']
+    # all_book.reset_index(drop=True, inplace=True)
 
     return all_book
 
-def get_bestseller():
-    import pandas as pd
 
+def get_bestseller():
     all_book = input_book()
     ko_bestseller = all_book[all_book.genre == '한국소설'][:5]
     jp_bestseller = all_book[all_book.genre == '일본소설'][:5]
@@ -19,9 +20,8 @@ def get_bestseller():
 
     return bestseller.sample(20)
 
-#
+
 def word_cloud(book_name):
-    import pandas as pd
     # !pip install wordcloud
 
     import nltk
@@ -38,7 +38,7 @@ def word_cloud(book_name):
 
 
     # OS별 matplotlib 한국어 처리
-    path = "c:/Windows/Fonts/malgun.ttf" # window 사용자의 경우 path 설정 중요
+    path = "static/AppleGothic.ttf" # window 사용자의 경우 path 설정 중요
     from matplotlib import font_manager, rc
     if platform.system() == 'Darwin':
         rc('font', family='AppleGothic')
@@ -60,7 +60,7 @@ def word_cloud(book_name):
     doc_ko = books_all[books_all['name'] == book_name].iloc[0].text
     tokens_ko = t.nouns(doc_ko)
 
-    with open('static/project_stopwords.txt', 'r') as f:
+    with open('static/project_stopwords.txt', 'r', encoding='utf-8') as f:
         stop_words = f.read().split(' ')
 
     ko = nltk.Text(tokens_ko)

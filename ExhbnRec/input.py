@@ -1,7 +1,6 @@
-def art_input() :
-    import pandas as pd
+import pandas as pd
 
+def art_input():
     western_data = pd.read_csv('static/western_preprocessed.csv')
-    sample_data = western_data[['title', 'artist', 'image']].sample(25)
-
-    return sample_data
+    famous_paint = western_data[['title', 'artist', 'image']].sample(25)
+    return famous_paint
